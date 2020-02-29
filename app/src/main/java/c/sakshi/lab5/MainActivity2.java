@@ -42,6 +42,8 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.addNote:
+                Intent intent1 = new Intent(this, MainActivity3.class);
+                startActivity(intent1);
                 return true;
 
             default: return super.onOptionsItemSelected(item);
