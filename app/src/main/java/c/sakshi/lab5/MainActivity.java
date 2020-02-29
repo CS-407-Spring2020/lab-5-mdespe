@@ -19,8 +19,9 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
         if (!sharedPreferences.getString(usernameKey, "").equals("")) {
             String username = sharedPreferences.getString(usernameKey, "");
+            sharedPreferences.edit().putString("username", username).apply();
             Intent intent = new Intent(this, MainActivity2.class);
-            intent.putExtra("username", username);
+            //intent.putExtra("username", username);
             startActivity(intent);
         } else {
             setContentView(R.layout.activity_main);
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
         sharedPreferences.edit().putString("username", username).apply();
         Intent intent = new Intent(this, MainActivity2.class);
-        intent.putExtra("username", username);
+        //intent.putExtra("username", username);
         startActivity(intent);
     }
 
